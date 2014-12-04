@@ -1,0 +1,17 @@
+
+
+    <h2>To Do: {{getTotalTodos()}}</h2>
+    <ul class="list-group">
+        <li class="animate list-group-item " ng-repeat="todo in todos">
+            <input id="check{{$index}}" type="checkbox" ng-model="todo.done">
+            <label for="check{{$index}}" class="done-{{todo.done}}">{{todo.text}}</label>
+        </li>
+    </ul>
+    <form class="form-horizontal">
+        <input class="input-append" type="text" ng-model="formTodoText" ng-model-instant autofocus>
+        <button  type="button" class="btn btn-success bt-lg" ng-click="addTodo()"><span class="glyphicon glyphicon-plus"></span> Add</button>
+        
+    </form>
+
+    <button  type="button" class="btn btn-success bt-lg" ng-click="clearCompleted()"><span class="glyphicon glyphicon-trash"></span> Clear completed</button>
+
