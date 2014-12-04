@@ -2,8 +2,9 @@ var myAppControllers = angular.module('myAppControllers', []);
 
 myAppControllers.controller('TodoController',function($scope) {
   $scope.todos = [
-        {text:'Learn AngularJS', done:false},
-        {text:'Build an app', done:false}
+        {text:'Sinterklaasgedichtje schrijven', done:false},
+        {text:'Schoen zetten', done:false},
+        
     ];
 
     $scope.getTotalTodos = function () {
