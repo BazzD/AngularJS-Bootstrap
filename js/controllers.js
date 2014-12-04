@@ -1,6 +1,13 @@
 var myAppControllers = angular.module('myAppControllers', []);
+var mainCtrl = function($scope){
+	$scope.btnState=1;
+	$scope.btnClick = function(state){
+		$scope.btnState = state
+	}
 
+};
 myAppControllers.controller('TodoController',function($scope) {
+  $scope.btnState=1;
   $scope.todos = [
         {text:'Sinterklaasgedichtje schrijven', done:false},
         {text:'Schoen zetten', done:false},
@@ -24,15 +31,15 @@ myAppControllers.controller('TodoController',function($scope) {
         }
     };
 });
-myAppControllers.controller('TableController',function($scope) {
- 
+myAppControllers.controller('TableController',function($scope,$http) {
+	$scope.btnState=2;
+	$http.get('countries.json').success(function(data) {
+		$scope.countries = data;
+		console.log($scope.countries);
+	});
 });
+ 
 
-var mainCtrl = function($scope){
-	$scope.btnState = 1,
-	$scope.btnClick = function(state){
-		$scope.btnState = state
-	}
 
-};
+
 

@@ -1,1 +1,15 @@
-<h1>Sortable tabel met JSON komt hier!</h1>
+
+<table class="table">
+	<tr>
+		<th>Country</th>
+		<th>GDP</th>
+		<th>Population</th>
+		<th>Flag</th>
+	</tr>
+	<tr ng-repeat="country in countries">
+		<td>{{country.name}}</td>
+		<td>{{country.gdp | currency}}</td>
+		<td>{{country.population | number}}</td>
+		<td><img ng-src="{{country.flagURL}}" width="100"></td>
+	</tr>
+</table>
